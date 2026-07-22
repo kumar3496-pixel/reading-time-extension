@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Reading Time + Summary</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Reading Time + Summary</h1>
+    </header>
+
+    <div id="loading" class="state">Analyzing page…</div>
+
+    <div id="result" class="state hidden">
+      <div class="stat-row">
+        <div class="stat">
+          <span class="stat-value" id="readingTime">–</span>
+          <span class="stat-label">min read</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value" id="wordCount">–</span>
+          <span class="stat-label">words</span>
+        </div>
+      </div>
+
+      <h2>Summary</h2>
+      <p id="summaryText">–</p>
+
+      <div class="controls">
+        <label for="sentenceCount">Summary length:</label>
+        <select id="sentenceCount">
+          <option value="2">Short (2 sentences)</option>
+          <option value="3" selected>Medium (3 sentences)</option>
+          <option value="5">Long (5 sentences)</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="error" class="state hidden">
+      Couldn't extract readable text from this page.
+    </div>
+  </div>
+
+  <script src="summarizer.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
